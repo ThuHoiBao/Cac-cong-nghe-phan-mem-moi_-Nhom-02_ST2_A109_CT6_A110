@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize";
-const sequelize =new Sequelize('node_fulltack','root','thupro098',{
+const sequelize =new Sequelize('database_development','root','thupro098',{
     host :'localhost',
     dialect: 'mysql',
     logging: false

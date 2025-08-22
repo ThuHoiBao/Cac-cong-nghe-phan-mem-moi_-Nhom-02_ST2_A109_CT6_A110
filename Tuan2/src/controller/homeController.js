@@ -29,7 +29,7 @@ let postCRUD = async (req, res) => {
 let getFindAllCrud = async (req, res) => {
     let data = await CRUDService.getAllUser();
     return res.render("users/findAllUser.ejs", {
-        dataTable: data,
+        datalist: data,
     });
 };
 
@@ -37,8 +37,8 @@ let getEditCRUD = async (req, res) => {
     let userId = req.query.id;
     if (userId) {
         let userData = await CRUDService.getUserInfoById(userId);
-        return res.render("users/editUser.ejs", {
-            user: userData,
+        return res.render("users/updateUser.ejs", {
+            data: userData,
         });
     } else {
         return res.send("Users not found");
@@ -49,7 +49,7 @@ let putCRUD = async (req, res) => {
     let data = req.body;
     let allUsers = await CRUDService.updateUser(data);
     return res.render("users/findAllUser.ejs", {
-        dataTable: allUsers,
+        datalist: allUsers,
     });
 };
 

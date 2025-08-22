@@ -4,29 +4,28 @@ import db from '../models/index'; // import database
 const salt = bcrypt.genSaltSync(10); // tạo salt để hash password
 
 // Hàm tạo user mới
-const createNewUser = async (data) => {
+
+let createNewUser = async (data) => {
 return new Promise(async(resolve,reject)=>{
       try {
         let hashPasswordFromBcrypt = await hashUserPassword(data.password);
-
         await db.User.create({
-        email: data.email,
-        password: hashPasswordFromBcrypt,
-        firstName: data.firstName,
-        lastName: data.lastName,
-        address: data.address,
-        phoneNumber: data.phoneNumber,
-        gender: data.gender === '1' ? true : false,
-        roleId: data.roleId,
-        });
+            email: data.email,
+            password: hashPasswordFromBcrypt,
+            firstName: data.firstName,
+            lastName: data.lastName,
+            address: data.address,
+            phoneNumber: data.phoneNumber,
+            gender: data.gender === '1' ? true : false,
+            roleId: data.roleId,
+            })
 
-        return { message: 'OK, create a new user successfully' };
+        resolve ('OK, create a new user successfully' );
     } catch (error) {
-        console.error(' Error creating user:', error);
-        throw error;
+        reject(error)
     }
 })
-};
+}
 
 // Hàm hash password
 let hashUserPassword = (password) => {
@@ -44,7 +43,7 @@ let hashUserPassword = (password) => {
 let getAllUser = () => {
     return new Promise(async (resolve, reject) => { // dùng Promise đảm bảo luôn trả kết quả
         try {
-            let users = await db.User.findAll({
+            let users = db.User.findAll({
                 raw: true, // hiển dữ liệu gốc
             });
             resolve(users); // hàm trả về kết quả
@@ -118,9 +117,9 @@ let deleteUserById = async (userId) => {
 
 // Xuất hàm ra ngoài
 module.exports = {
-    createNewUser,
-    getAllUser,
-    getUserInfoById,
-    updateUser,
-    deleteUserById
+    createNewUser : createNewUser,
+    getAllUser: getAllUser,
+    getUserInfoById: getUserInfoById,
+    updateUser: updateUser,
+    deleteUserById: deleteUserById
 };
