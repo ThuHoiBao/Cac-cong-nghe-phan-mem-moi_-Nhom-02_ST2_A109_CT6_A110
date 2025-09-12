@@ -1,0 +1,56 @@
+/* Product Card */
+.product-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 280px;  /* Giới hạn chiều rộng của card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  overflow: hidden; /* Đảm bảo không có phần tử tràn ra ngoài */
+}
+
+.product-card img {
+  width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của khung */
+  height: 200px; /* Chiều cao tự động để giữ tỷ lệ ảnh */
+  object-fit: contain; /* Đảm bảo ảnh vừa khung mà không bị cắt */
+  border-radius: 8px;  /* Bo góc ảnh */
+}
+
+
+.product-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+.product-card .rating {
+  margin-top: 10px;
+}
+
+.product-card .price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #27ae60;
+  margin-top: 15px;
+}
+
+.product-card .discount {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #e74c3c;
+  margin-left: 10px;
+}
+
+.product-card .discount-percentage {
+  font-size: 14px;
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}

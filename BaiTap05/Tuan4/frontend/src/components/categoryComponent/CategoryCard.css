@@ -1,0 +1,39 @@
+/* src/components/categoryComponent/CategoryCard.css */
+
+.category-card {
+  background-color: #1abc9c; /* Màu xanh sáng, hiện đại */
+  border-radius: 5px;  /* Bo góc nhẹ hơn để tạo cảm giác mềm mại */
+  width: 50%;
+  /* Giảm kích thước để tạo cảm giác thoáng */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);  /* Bóng nhẹ, hiện đại */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  cursor: pointer; /* Đổi con trỏ khi hover */
+  overflow: hidden;  /* Ẩn phần thừa nếu có */
+}
+
+.category-card h3 {
+  font-size: 20px;  /* Tăng kích thước chữ cho dễ đọc */
+  font-weight: 650;  /* Đậm hơn để nổi bật */
+  color: #494949;  /* Màu chữ sáng, dễ đọc trên nền tối */
+    /* Cách dòng phía dưới */
+}
+
+.category-card p {
+  font-size: 14px;  /* Kích thước chữ nhỏ hơn cho mô tả */
+  color: #ffffff;  /* Giữ màu sáng để dễ đọc */
+    /* Khoảng cách giữa mô tả và các phần tử khác */
+}
+
+.category-card:hover {
+  transform: translateY(-5px);  /* Tăng hiệu ứng di chuyển nhẹ khi hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);  /* Bóng đổ sâu hơn để tạo chiều sâu */
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;  /* Bo góc ảnh */
+  object-fit: cover;  /* Đảm bảo ảnh không bị méo */
+ /* Khoảng cách giữa ảnh và tiêu đề */
+}
